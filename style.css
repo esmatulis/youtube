@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*****************
+ * Global Styles *
+ *****************/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+/******************
+ * Navigation Bar *
+ ******************/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  height: 40px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .nav-left,
+nav .search-bar,
+nav .nav-right {
+  display: flex;
+}
+
+nav .nav-left,
+nav .nav-right {
+  align-items: center;
+  gap: 24px;
+}
+
+nav .nav-left img,
+nav .nav-right img,
+nav .search-bar img {
+  cursor: pointer;
+}
+
+/* Search */
+.search-bar {
+  min-width: 400px;
+  display: flex;
+}
+
+.search-bar .search-icon {
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-radius: 0px;
+  padding: 8px 16px;
+  background-color: #f8f8f8;
+}
+
+.search-bar input {
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  padding: 8px 16px;
+  flex-grow: 1;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+/******************
+ * Main Content *
+ ******************/
+main {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 30px;
+}
+
+/* Video */
+.video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  flex-grow: 1;
+  max-width: 800px;
+  font-size: 14px;
+}
+
+.video-content .subheader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+.video-content .subheader .video-channel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.video-content .subheader .video-channel h3 {
+  font-size: 14px;
+  margin: 0;
+  color: black;
+  cursor: pointer;
+}
+
+.video-content .subheader .video-channel p {
+  font-size: 14px;
+  margin: 0;
+  color: black;
+}
+
+.video-content .subheader .video-channel img {
+  cursor: pointer;
+}
+
+.video-content .video-details .description {
+  color: #515151;
+}
+
+.video-content .video,
+.video-content .video img {
+  width: 100%;
+  height: auto;
+}
+
+.video-content h2 {
+  font-size: 20px;
+  margin: 4px 0;
+}
+
+.video-content .subheader .video-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0px;
+}
+
+.video-content .subheader .video-actions .action {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: black;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.video-content .subscribe-button {
+  color: white;
+  text-transform: uppercase;
+  background: #cc0000;
+  border: 0px;
+  padding: 10px 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* Aside */
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0px;
+  width: 400px;
+  gap: 20px;
+}
+
+.video-suggestion-item {
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+  row-gap: 10px;
+  cursor: pointer;
+}
+
+.video-suggestion-item img {
+  object-fit: contain;
+  flex-grow: 1;
+  width: auto;
+  height: 100%;
+}
+
+.video-suggestion-item .video-suggestion-text {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  font-family: sans-serif;
+  gap: 5px;
+  color: #515151;
+}
+
+.video-suggestion-item .video-suggestion-text h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.video-suggestion-item .video-suggestion-text p {
+  font-size: 12px;
+  margin: 0;
+}
+
+/**********************
+ * Responsive Content *
+ **********************/
+@media (max-width: 768px) {
+  nav .search-bar {
+    min-width: 250px;
+  }
+
+  nav .nav-right {
+    display: none;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .video-content .subheader {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 0px 30px 0px;
+  }
+
+  .subheader .video-actions {
+    order: -1;
+  }
+
+  .stats {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .video-suggestion-item {
+    flex-direction: row;
+  }
+
+  aside {
+    width: 400px;
+  }
+
+  .video-suggestion-item .video-suggestion-text {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1064px) {
+  .video-actions .action span {
+    display: none;
+  }
+}
